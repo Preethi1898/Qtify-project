@@ -1,0 +1,18 @@
+.hero {
+    background-color:#121212;
+    height: 270px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+  }
+  .herotext{
+  font-family: Poppins;
+  font-size: 28px;
+  font-style: normal;
+  color: #FFFFFF;
+  font-weight: 600;
+  line-height: normal;
+  }
+  
