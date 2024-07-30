@@ -1,37 +1,42 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-//import Card from "./components/Card/Card";
-import Logo from "./Logo/Logo";
 import Hero  from "./Hero/Hero";
+import Card from "./Card/Card";
 //@ts-ignore
 import NavBar from "./Navbar/Navbar";
-import Search from "./Search/Search";
-//import { fetchTopAlbums } from "./components/api/api";
-//import Section from "./components/Sections/Section";
+import axios from "axios";
+
 
 function App() {
-  {/*const [topAlbumData, settopAlbumData] = useState([]);
+  
+  const [topAlbums, settopAlbums] = useState([]);
+   const url = "https://qtify-backend-labs.crio.do"
+ const fetchTopAlbums = async() =>{
+    try{
+const res = await axios.get(`${url}/albums/top`)
+return res.data;
+    }catch(err){
+console.error(err)
+    }
+}
   const generateTopAlbumData = async () => {
     const data = await fetchTopAlbums();
     console.log(data);
-    settopAlbumData(data);
+    settopAlbums(data);
   };
   useEffect(() => {
     generateTopAlbumData();
   }, []);
-  console.log(topAlbumData, "topAlbumData");*/}
+  console.log(topAlbums, "topAlbumData");
   return (
     <div className="App">
       <NavBar/>
-      <Hero/>
-      {/*<div className="sectionWrapper" >
-      <Section type="album" title="Top Albums" data={topAlbumData} />
-      </div>*/}
-      {/* <div className="cardContainer">
-      {topAlbumData.map((item) => {
+      <Hero/>     
+       <div className="cardContainer">
+      {topAlbums.map((item) => {
         return <Card key={item.id} data={item} type="album" />;
       })}
-      </div> */}
+      </div> 
     </div>
   );
 }

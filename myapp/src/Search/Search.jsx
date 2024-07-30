@@ -7,11 +7,9 @@ import {ReactComponent as SearchIcon} from "../assets/Search icon (1).svg";
     <div >
       <form className={styles.wrapper}  >
         <input className={styles.search} placeholder="Search a album of your choice" />
-        <div>
             <button className={styles.searchButton} type='submit' >
               <SearchIcon/>
             </button>
-        </div>
       </form>
         </div>
   )
