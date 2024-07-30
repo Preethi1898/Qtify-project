@@ -12,9 +12,12 @@
     "@mui/system": "5.16.4",
     "axios": "^1.7.2",
     "react": "^17.0.0 || ^18.0.0",
+    "react-card-slider-component": "^1.0.9",
     "react-dom": "^17.0.0 || ^18.0.0",
     "react-router-dom": "6.25.1",
     "react-scripts": "^5.0.0",
+    "react-slick": "^0.30.2",
+    "slick-carousel": "^1.8.1",
     "swiper": "^11.1.8"
   },
   "devDependencies": {

@@ -1,17 +1,11 @@
 .App {
   text-align: center;
+  
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+
+
 
 .App-header {
   background-color: #282c34;
@@ -39,7 +33,6 @@
 .cardContainer{
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  background-color: black;
   grid-gap: 10px;
 }
 .sectionWrapper{
@@ -47,4 +40,5 @@
   display: flex;
   flex-direction: column;
   gap: 32px;
+  background-color: black;
 }

@@ -2,8 +2,11 @@
     /* background-color: var(-color-black); */
     background-color: #121212;
     /* color: var(-color-primary); */
+    font-weight: 600;
+    font-size: 18px;
     color: #34C94B;
     border-radius: 12px;
+    font-family: poppins;
     padding: 10px 16px;
     cursor: pointer;
 }
