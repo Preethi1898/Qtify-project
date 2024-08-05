@@ -9,7 +9,7 @@ import Stack from "@mui/material/Stack";
 import { color } from "@mui/system";
 
 const Section = ({ title, data, type }) => {
-  const [caroselToggle, setCaroselToggle] = useState();
+  const [caroselToggle, setCaroselToggle] = useState(true);
   console.log(data);
   const handleToggle = () => {
     setCaroselToggle(!caroselToggle);
