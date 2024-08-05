@@ -4,7 +4,8 @@ import Hero  from "./Hero/Hero";
 import Section from "./Section/Section";
 //@ts-ignore
 import NavBar from "./Navbar/Navbar";
-import { fetchTopAlbums, fetchNewAlbums } from "./api/api";
+import { fetchTopAlbums, fetchNewAlbums,fetchSongs, fetchGenre } from "./api/api";
+import TabSection from "./Tabs/Tab";
 
 
 
@@ -12,6 +13,8 @@ function App() {
   
   const [topAlbums, settopAlbums] = useState([]);
   const [newAlbums,setnewAlbums]= useState([]);
+  const [songData,setsongData]=useState([]);
+  const [genres,setGenres]=useState([]);
    
   const generateTopAlbumData = async () => {
     const data = await fetchTopAlbums();
@@ -22,9 +25,19 @@ function App() {
     const data= await fetchNewAlbums();
     setnewAlbums(data);
   }
+  const generateSongData = async() => {
+    const data= await fetchSongs();
+    setsongData(data);
+  }
+  const generateGenres = async() => {
+    const data= await fetchGenre();
+    setGenres(data);
+  }
   useEffect(() => {
     generateTopAlbumData();
     generateNewAlbumData();
+    generateSongData();
+    generateGenres();
   }, []);
   console.log(topAlbums, "topAlbumData");
   return (
@@ -34,6 +47,7 @@ function App() {
       <div className="sectionWrapper" >
       <Section type="album" title="Top Albums" data={topAlbums} />
       <Section type="album" title="New Albums" data={newAlbums} />
+      <TabSection title="Songs" data={songData} genres={genres} />
       </div>
     </div>
   );
